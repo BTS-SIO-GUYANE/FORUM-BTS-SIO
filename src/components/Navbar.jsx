@@ -1,10 +1,6 @@
 import React from 'react';
 import '../index.css';
-import image from '../image/mg1.png';
-function image(){
-    return image;
-    <img src={mg1} alt=""/>
-  } 
+
 
 
 function Navbar(){
