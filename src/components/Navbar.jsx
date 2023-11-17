@@ -1,6 +1,10 @@
 import React from 'react';
 import '../index.css';
-
+import image from '../image/mg1.png';
+function image(){
+    return image;
+    <img src={mg1} alt=""/>
+  } 
 
 
 function Navbar(){
@@ -18,6 +22,7 @@ function Navbar(){
     const isPage = (pageName) => window.location.pathname.includes(pageName)
 
     return(
+       
         <nav>
             <ul id="menu">
                 <li><a href='/App.js'className={isPage('App') ? 'active' : ''}>Accueil</a></li>
