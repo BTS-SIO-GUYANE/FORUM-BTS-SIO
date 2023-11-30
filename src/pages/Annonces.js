@@ -1,11 +1,14 @@
-import Header from './components/Header';
+import Header from '../components/Header';
 
-function ann () {
+function Annonces() {
     return(
-        
-        <Header/>
-        )
+        <header> 
+          <Header/>
+          <h1>Annonces</h1>
+        </header>
+       
+        );
    
 }
 
-export default ann
+export default Annonces
