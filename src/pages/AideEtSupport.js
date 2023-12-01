@@ -1,13 +1,13 @@
 import Header from "../components/Header";
 
-function Contact(){
+function AideEtSupport(){
     return(
         <header>
                <Header/>
-               <h1>Contact</h1>
+               <h1>Aide et Sup</h1>
             
         </header>
     );  
 }
 
-export default Contact;
+export default AideEtSupport;
