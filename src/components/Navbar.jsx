@@ -1,10 +1,21 @@
-import React from 'react';
-import '../index.css';
+import React from "react";
+import "../index.css";
 
+function Navbar() {
+  // console.log(window.location.pathname)
 
+  // function isPage(pageName) {
+  //     // if(window.location.pathname.includes(pageName)) {
+  //     //     return true
+  //     // }
+  //     // return false
+  //     return window.location.pathname.includes(pageName)
+  // }
 
-function Navbar(){
+  const isPage = (pageName) => window.location.pathname.includes(pageName);
 
+ 
+  
     // console.log(window.location.pathname)
 
     // function isPage(pageName) {
@@ -34,7 +45,4 @@ function Navbar(){
     );
 }
 
-export default Navbar
-
-
-
+export default Navbar;
