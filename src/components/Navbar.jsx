@@ -11,7 +11,6 @@ function Navbar() {
   //     // return false
   //     return window.location.pathname.includes(pageName)
   // }
-
   const isPage = (pageName) => window.location.pathname.includes(pageName);
 
  
@@ -26,7 +25,7 @@ function Navbar() {
     //     return window.location.pathname.includes(pageName)
     // }
 
-    const isPage = (pageName) => window.location.pathname.includes(pageName)
+   
 
     return(
        <>
