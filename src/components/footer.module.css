@@ -1,20 +1,25 @@
+
+
 .footer{
     color: #fff;
     font-family: Cambria;
     background-color: #9F9F9F;
-    padding-top: 3em;
+    padding-top: 20px;
     margin: 0 auto; 
-    position: absolute;
     width: 100%;
-    flex-shrink: 0;
-    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
+.paragraphe{
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+}
+
 .align{
     display: flex;
-    gap: 10em;
+    gap: 55em;
 }
 h3 a{
     text-decoration: none;

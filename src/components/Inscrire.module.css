@@ -1,0 +1,61 @@
+.BackImage{
+    position: relative; 
+    width: 100%;
+    height: 750px;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+}
+.inscrireContainer{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.inscrire {
+    position: absolute;
+    top: 7%;
+    background-color: #004166;
+    border-radius: 20px;
+    border-width: 5px;
+    border-color: #fff;
+    border-style: solid;
+    width: 40%;
+    height: 87%;
+}
+.titleInscrit{
+    font-size: 50px;
+    text-align: center;
+}
+.inscrire, .Input{
+    display: flex;
+    justify-content: center;
+}
+.Input{
+    width: 30em;
+    height: 35px;
+    margin: 15px;
+    background-color: #004166;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #000;
+}
+::placeholder{
+    color:#000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.Submit{
+    width: 15em;
+    height: 3em;
+    margin: 15px;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #000;
+}
+.Submit:hover{
+    width: 20em;
+    border-radius: 10px;
+    color:#fff;
+    background-color: #000;
+    transition: 0.5s ease;
+}

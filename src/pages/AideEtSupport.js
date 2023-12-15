@@ -1,12 +1,12 @@
-import Header from "../components/Header";
+import Layout from "../components/Layout";
 
 function AideEtSupport(){
     return(
-        <header>
-               <Header/>
+        <Layout>
+               
                <h1>Aide et Sup</h1>
-            
-        </header>
+               
+        </Layout>
     );  
 }
 
