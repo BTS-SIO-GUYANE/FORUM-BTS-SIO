@@ -1,16 +1,16 @@
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Layout from './components/Layout';
 import Ordinateur2 from './image/Ordinateur2.jpg';
+import Inscrire from './components/Inscrire';
 
 function App(){
   return(
-      <header>
-             <Header/>
+      <Layout>
+            
              <h1>Accueil</h1>
-             <diV className="ordi2"><div><img id='dim' src={Ordinateur2} alt='picture2' /></div></diV>
-      </header>
-        <Footer/>
-  );
+             <div className="ordi2"><div><img id='dim' src={Ordinateur2} alt='picture2' /></div></div>
+             <Inscrire/>
+      </Layout>     
+  )
 }
 
 export default App;

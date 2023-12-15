@@ -1,12 +1,12 @@
-import Header from "../components/Header";
+import Layout from "../components/Layout";
 
 function Espace_etudiant(){
     return(
-        <header>
-               <Header/>
+        <Layout>
+               
                <h1>Espace étudiant</h1>
-            
-        </header>
+               
+        </Layout>
     );  
 }
 

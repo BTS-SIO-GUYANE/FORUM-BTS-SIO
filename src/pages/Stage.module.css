@@ -1,0 +1,70 @@
+.page {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+}
+.titleStage {
+  text-align: center;
+  font-size: 70px;
+  font-family: Arial;
+}
+.titleStage,
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.pargraph {
+  margin: 2em;
+  font-size: 20px;
+}
+.separation {
+  height: 30px;
+  background-color: #004166;
+}
+
+.TwoCol {
+  background-color: #fff;
+  height: 12em;
+  color: #000;
+}
+.textStage {
+  text-align: center;
+  font-size: 18px;
+  padding: 2em;
+}
+.textStage2 {
+  font-size: 11px;
+  list-style: none;
+  padding: 7px;
+}
+.IMT,
+.Apynow,
+.Remire,
+.Cayenne {
+  width: 50%;
+}
+.OneCol,
+.TwolCol {
+  box-sizing: border-box;
+  padding: 20px;
+  flex: 1;
+}
+.Card {
+  display: flex;
+  padding: 2em;
+}
+
+@media screen and (min-width: 700px) {
+  /*Deux colonnes lorsque la largeur de l'écran est supérieure à 600 pixels*/
+  .OneCol,
+  .TwoCol {
+    flex: 0 0 45%; /*Définissez la largeur de chaque colonne  */
+    margin: 1%;
+  }
+  .Card {
+    flex-direction: row;
+    gap: 5em;
+  }
+}
