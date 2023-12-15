@@ -1,20 +1,21 @@
+/* corps */
 body {
   margin: 0;
   /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;*/
- background-color: #004166; 
-
-  /*font-family: cambria;*/
+  -moz-osx-font-smoothing: grayscale;
+    font-family: cambria;*/
+  background-color: #004166; 
+  color:#fff;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+/* header */
 header {
   width: 100%;
   color: #fff;
@@ -28,7 +29,7 @@ header .container {
   max-width: 1800px;
   margin: 0 auto;
 }
-
+/* barre de navigation */
 #menu {
   display: flex;
   justify-content: space-around;
@@ -68,21 +69,39 @@ header .container {
 margin-left: 10px;
 }
 
-h1{
+#titre-logo{
   margin-left: 5px;
 }
 
- .forum{ display: flex;
+.forum{ display: flex;
    gap: 2rem;
 
- }
+}
 
- .forum a {
+.forum a {
    text-decoration: none;
    color: #fff;
- }
-.ordi2{
+}
+#div1{
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+}
+#div1 button{
+  color: gray;
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  border: solid black 3px;
+  border-radius: 5px;
+}
+#dim{
+  /* float: right;
+  margin-right: 50px; */
+  border: solid black 8px;
   
- 
-
+}
+.bts-sio{
+  font-size: 30px;
 }
