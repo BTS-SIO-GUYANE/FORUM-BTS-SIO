@@ -4,7 +4,7 @@
     height: 750px;
     object-fit: cover;
     margin: 0;
-    padding: 0;
+    padding: 0; 
 }
 .inscrireContainer{
     display: flex;
@@ -31,7 +31,9 @@
     justify-content: center;
 }
 .Input{
-    width: 30em;
+    width: 25em;
+    display: flex;
+    justify-content: center;
     height: 35px;
     margin: 15px;
     background-color: #004166;
@@ -58,4 +60,19 @@
     color:#fff;
     background-color: #000;
     transition: 0.5s ease;
+}
+
+@media (max-width: 700px){
+    .inscrire {
+        width: 60%;
+        height: 70%;
+    }
+    .Input{
+        width: 19em;
+        margin: 10px;
+    }
+    .titleInscrit{
+        font-size: 40px;
+        text-align: center;
+    }
 }

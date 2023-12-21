@@ -1,0 +1,90 @@
+.backSupport {
+  font-family: Arial;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-image: url(../image/TêteATête.jpg);
+}
+.containerSup {
+  display: flex;
+  gap: 3px;
+}
+.titleSup, .titleSup2 {
+  font-size: 45px;
+  font-weight: bold;
+  margin-left: 60px;
+  text-align: center;
+}
+
+.cardSup {
+  background-color: #ffffff93;
+  border-style: solid;
+  border-color: #004166;
+  border-width: 7px;
+  padding: 15px;
+  margin: 3rem;
+  width: 15em;
+  height: 13em;
+}
+
+/* Les acrticles */
+.ParagSup {
+  font-weight: bold;
+  font-size: 35px;
+}
+.cardSup,
+.ParagSup {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.lienSup {
+  text-decoration: none;
+  color: #000;
+}
+.ParagSup1 {
+    background-color: #ffffff93;
+    border-style: solid;
+    border-color: #004166;
+    border-width: 7px;
+    padding: 15px;
+    margin: 3rem;
+    width: 35rem;
+    height: 13em;
+  }
+
+  /* Adaptation sur un écran petit */
+
+  @media (max-width: 780px){
+    .containerSup {
+      display: block;
+    }
+    .ParagSup1,.titleSup2 {
+      display: none;
+    }
+    .cardSup {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      width: 77%;
+    }
+    .titleSup {
+      margin-top: 0;
+      text-align: center;
+    }
+    .lienSup {
+      text-decoration: none;
+      color: #fff;
+      background-color: #004166;
+      padding: 5px;
+      border-radius: 15px;
+    }
+    .lienSup:hover{
+      background-color: #000;
+      color: #fff;
+      border-radius: 25px 5px 25px 5px;
+      transition: 0.5s ease-in-out;
+    }
+   
+  }
+  

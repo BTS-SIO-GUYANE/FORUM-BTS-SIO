@@ -21,6 +21,22 @@
 .image{
   float: right;
 }
+.submit{
+  color:#fff;
+  font-size: 15px;
+  font-weight: bold;
+  width: 5rem;
+  height: 2rem;
+  background-color: #000;
+  border: none;
+  border-radius: 7px;
+}
+.submit:hover{
+  background-color: #fff;
+  color:#000;
+  border-radius: 8px 0px 8px 0px;
+  transition: 0.3s ease-in-out;
+}
 @media screen and (min-width: 700px) {
     /*Deux colonnes lorsque la largeur de l'écran est supérieure à 600 pixels*/
     .colonne1,

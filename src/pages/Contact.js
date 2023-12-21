@@ -48,7 +48,7 @@ function Contact() {
                 ></textarea></td>
                 </tr> 
                 <tr>
-                    <td><input type="submit" name="" id="" /></td>
+                    <td><input className={style.submit} type="submit" name="" id="" /></td>
                 </tr>
         </table>
          </form>

@@ -9,7 +9,7 @@ function Stages() {
   return (
     <Layout>
       <div className={style.page}>
-        <h1 className={style.titleStage}>
+      <h1 className={style.titleStage}>
           Recherche de <br /> Stage
         </h1>
         <p className={style.pargraph}>
@@ -33,10 +33,10 @@ function Stages() {
           {/* colonne */}
           <div className={style.TwoCol}>
             <p className={style.textStage}>
-              {" "}
-              <a href="https://www.imtconcept.com/" target="blank">
+              
+              <a href="https://www.imtconcept.com/" target="blank" className={style.liens}>
                 IMT Concept
-              </a>{" "}
+              </a>
               <br />
               Création d’application mobile et site web Créons ensemble l’outil
               numérique qui propulsera votre businessau niveau supérieur.
@@ -56,9 +56,9 @@ function Stages() {
           {/* colonne */}
           <div className={style.TwoCol}>
             <p className={style.textStage}>
-              {" "}
-              <a href="https://www.pagesjaunes.fr/pros/57887580" target="blank">
-                Entre Aynow
+              
+              <a href="https://www.pagesjaunes.fr/pros/57887580" target="blank" className={style.liens}>
+                Entreprisse Apynow
               </a>
               <br />
               Entreprise de Management et juridique Le 7 AV LOUIS PASTEUR 97300
@@ -80,10 +80,11 @@ function Stages() {
           <div className={style.TwoCol}>
             <p className={style.textStage2}>
               {" "}
-              <a href="http://www.remire-montjoly.fr/" target="blank">
+              <a href="http://www.remire-montjoly.fr/" target="blank" className={style.liens}>
                 Cybert Carbet de Remire Montjoly
-              </a>{" "}
+              </a>
               <br />
+              <br/>
               Pour un accès à informatique et à internet pour tous, le Cyber
               Carbet de Rémire-Montjoly vous accueille du lundi au vendredi de
               12h30 à 18h30. Dans votre Cyber Carbet vous pourrez y réaliser
@@ -122,7 +123,7 @@ function Stages() {
           <div className={style.TwoCol}>
             <p className={style.textStage}>
               {" "}
-              <a href="http://www.ville-cayenne.fr/" target="blank">
+              <a href="http://www.ville-cayenne.fr/" target="blank" className={style.liens}>
                 Mairie de Cayene
               </a>
               <br />
