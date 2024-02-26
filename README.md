@@ -1,3 +1,20 @@
+
+# What is it ?
+
+Here you can find the source code of our forum.
+
+This is a class collaboration project  
+from Melkior Garré,  
+the French Guiana high school (BTS SIO section)
+
+The project uses:  
+NodeJS, Express, React and Prisma
+
+
+You can clone it using:  
+`git clone https://github.com/BTS-SIO-GUYANE/FORUM-BTS-SIO.git`
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
