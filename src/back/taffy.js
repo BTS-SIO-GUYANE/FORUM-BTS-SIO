@@ -1,1 +1,0 @@
-TAFFY = require( 'taffy' ).taffy;

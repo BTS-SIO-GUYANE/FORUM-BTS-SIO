@@ -1,313 +1,60 @@
-datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
-}
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
   provider = "prisma-client-js"
 }
 
-generator erd {
-  provider                  = "prisma-erd-generator"
-  includeRelationFromFields = true
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
 }
 
-enum Role {
-  ADMIN
-  COLLECTER
-  COMPILER
-  CONNAITRE
+model Membre {
+  id       Int       @id @default(autoincrement())
+  nom      String    @unique
+  prenom   String?
+  date     DateTime
+  mdp      String
+  type     Int
+  articles Article[]
+  reponses Reponse[]
+  idArt    Int
 }
 
-enum FormStatus {
-  SAVED
-  COLLECTED
-  COMPILED
+model Article {
+  id       Int       @id @default(autoincrement())
+  titre    String
+  date     DateTime
+  contenu  String
+  membre   Membre    @relation(fields: [idMembre], references: [id])
+  idMembre Int
+  rubriques Rubrique @relation(fields: [idRubriques],references: [id])
+  idRubriques Int
+  reponses Reponse[]
 }
 
-// Usager | Employe | FormList | UsagerFormList
-
-model Usager {
-  id          Int                @id @default(autoincrement())
-  email       String             @unique
-  password    String
-  role        Role               @default(COLLECTER)
-  createdAt   DateTime           @default(now())
-  updatedAt   DateTime           @updatedAt
-  employe     Employe?
-  formulaires UsagerFormulaire[]
-  formList    UsagerFormList[]
-  savedData   SavedData[]
-}
-
-model Employe {
-  id              Int       @id @default(autoincrement())
-  usagerId        Int       @unique
-  nom             String
-  prenom          String
-  dateNaissance   String?
-  adresse         String?
-  telephone       String?
-  dateEntree      DateTime?
-  dateSortie      DateTime?
-  posteSurContrat String?
-  departement     String?
-  service         String?
-  createdAt       DateTime  @default(now())
-  updatedAt       DateTime  @updatedAt
-  usager          Usager    @relation(fields: [usagerId], references: [id])
-}
-
-model FormList {
-  id             Int              @id @default(autoincrement())
-  nom            String           @unique
-  UsagerFormList UsagerFormList[]
-}
-
-model UsagerFormList {
-  usagerId   Int
-  formListId Int
-  role       Role
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
-  usager     Usager   @relation(fields: [usagerId], references: [id])
-  formList   FormList @relation(fields: [formListId], references: [id])
-
-  @@id([usagerId, formListId])
-  @@map("Usager_FormList")
-}
-
-// Formulaire | UsagerFormulaire | Machine
-
-model Formulaire {
-  id                Int                @id @default(autoincrement())
-  libelle           String
-  code              String
-  numero            Int
-  mission           String
-  serviceClient     String
-  poste             String
-  equipe            String
-  projet            String
-  statut            FormStatus         @default(COLLECTED)
-  debut             DateTime
-  fin               DateTime
-  createdAt         DateTime           @default(now())
-  updatedAt         DateTime           @updatedAt
-  usagers           UsagerFormulaire[]
-  machine           Machine?
-  evenements        Evenement[]
-  mouvementStocks   MouvementStock[]
-  travauxExterieurs TravailExterieur[]
-  echantillons      Echantillon[]
-}
-
-model UsagerFormulaire {
-  usagerId     Int
-  formulaireId Int
-  action       Role
-  createdAt    DateTime   @default(now())
-  updatedAt    DateTime   @updatedAt
-  usager       Usager     @relation(fields: [usagerId], references: [id])
-  formulaire   Formulaire @relation(fields: [formulaireId], references: [id])
-
-  @@id([usagerId, formulaireId])
-  @@map("Usager_Formulaire")
-}
-
-model Machine {
-  id           Int        @id @default(autoincrement())
-  formulaireId Int        @unique
-  libelle      String
-  marque       String
-  modele       String
-  contenance   Float?
-  createdAt    DateTime   @default(now())
-  updatedAt    DateTime   @updatedAt
-  formulaire   Formulaire @relation(fields: [formulaireId], references: [id])
-}
-
-// Evenement
-
-model Evenement {
-  id           Int        @id @default(autoincrement())
-  formulaireId Int
-  mode         String
-  libelle      String
-  secteur      String
-  systeme      String
-  materiel     String
-  materielTag  String
-  cause        String
-  action       String
-  debut        DateTime
-  fin          DateTime
-  createdAt    DateTime   @default(now())
-  updatedAt    DateTime   @updatedAt
-  formulaire   Formulaire @relation(fields: [formulaireId], references: [id])
-}
-
-// MouvementStock | Preparateur
-
-model MouvementStock {
-  id                    Int           @id @default(autoincrement())
-  formulaireId          Int
-  libelle               String
-  produit               String
-  fournisseur           String
-  colisage              String
-  colisagePoidsUnitaire Int
-  colisageUnite         String
-  colisageNombre        Int
-  quantite              Int
-  unite                 String
-  magasinOrigine        String
-  depotOrigine          String
-  magasinDestination    String
-  depotDestination      String
-  debut                 DateTime
-  fin                   DateTime
-  createdAt             DateTime      @default(now())
-  updatedAt             DateTime      @updatedAt
-  formulaire            Formulaire    @relation(fields: [formulaireId], references: [id])
-  preparateurs          Preparateur[]
-}
-
-model Preparateur {
-  id               Int            @id @default(autoincrement())
-  mouvementStockId Int
-  numero           Int
-  nom              String
-  prenom           String
-  service          String
-  equipe           String
-  emploi           String
-  matricule        String
-  createdAt        DateTime       @default(now())
-  updatedAt        DateTime       @updatedAt
-  mouvementStock   MouvementStock @relation(fields: [mouvementStockId], references: [id])
-}
-
-// TravailExterieur | Conducteur
-
-model TravailExterieur {
-  id                Int         @id @default(autoincrement())
-  formulaireId      Int
-  matiere           String
-  voyages           Int
-  regionOrigine     String
-  zoneOrigine       String
-  regionDestination String
-  zoneDestination   String
-  debut             DateTime
-  fin               DateTime
-  createdAt         DateTime    @default(now())
-  updatedAt         DateTime    @updatedAt
-  formulaire        Formulaire  @relation(fields: [formulaireId], references: [id])
-  conducteur        Conducteur?
-}
-
-model Conducteur {
-  id                 Int              @id @default(autoincrement())
-  travailExterieurId Int              @unique
-  numero             Int
-  nom                String
-  prenom             String
-  service            String
-  equipe             String
-  emploi             String
-  matricule          String
-  createdAt          DateTime         @default(now())
-  updatedAt          DateTime         @updatedAt
-  travailExterieur   TravailExterieur @relation(fields: [travailExterieurId], references: [id])
-}
-
-// Echantillon | Preleveur | Prise | Technicien
-
-model Echantillon {
-  id               Int        @id @default(autoincrement())
-  formulaireId     Int
-  numero           Int
-  complexeStatique String
-  foyerStatique    String
-  matiere          String
-  nature           String
-  hauteur          Float?
-  poidsHumide      Float?
-  poidsSec         Float?
-  debut            DateTime
-  fin              DateTime
-  createdAt        DateTime   @default(now())
-  updatedAt        DateTime   @updatedAt
-  formulaire       Formulaire @relation(fields: [formulaireId], references: [id])
-  preleveur        Preleveur?
-  prises           Prise[]
-}
-
-model Preleveur {
-  id            Int         @id @default(autoincrement())
-  echantillonId Int         @unique
-  numero        Int
-  nom           String
-  prenom        String
-  service       String
-  equipe        String
-  emploi        String
-  matricule     String
-  createdAt     DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
-  echantillon   Echantillon @relation(fields: [echantillonId], references: [id])
-}
-
-model Prise {
-  id                       Int         @id @default(autoincrement())
-  echantillonId            Int
-  numero                   Int
-  libelle                  String
-  nature                   String
-  volume                   Float?
-  masse                    Float?
-  concentrationValeur      Float?
-  unite                    String
-  R                        Float?
-  analyseLibelle           String
-  analyseDilution          String
-  analyseValeur            Float?
-  analyseUnite             String
-  standardLibelle          String
-  standardConcentration    Float?
-  standardUnite            String
-  standardValeurAbsorbance Float?
-  standardK                Float?
-  debut                    DateTime
-  fin                      DateTime
-  createdAt                DateTime    @default(now())
-  updatedAt                DateTime    @updatedAt
-  echantillon              Echantillon @relation(fields: [echantillonId], references: [id])
-  technicien               Technicien?
-}
-
-model Technicien {
-  id        Int      @id @default(autoincrement())
-  priseId   Int      @unique
-  numero    Int
+model Categorie {
+  id        Int        @id @default(autoincrement())
   nom       String
-  prenom    String
-  service   String
-  equipe    String
-  emploi    String
-  matricule String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  prise     Prise    @relation(fields: [priseId], references: [id])
+  rubriques Rubrique[]
 }
 
-model SavedData {
-  id        Int      @id @default(autoincrement())
-  usagerId  Int
-  form      String   @db.TinyText
-  data      String   @db.LongText
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  usager    Usager   @relation(fields: [usagerId], references: [id])
+model Reponse {
+  id          Int      @id @default(autoincrement())
+  dateRep     DateTime
+  contenueRep String
+  memb        Membre   @relation(fields: [idMemb], references: [id])
+  idMemb      Int
+  articles Article @relation(fields: [idArticle], references: [id])
+  idArticle Int
+}
+
+model Rubrique {
+  id           Int       @id @default(autoincrement())
+  nomRub       String
+  descRub      String
+  categories   Categorie @relation(fields: [idCategories], references: [id])
+  idCategories Int
+  articles Article[]
 }
