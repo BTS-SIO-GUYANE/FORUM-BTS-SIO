@@ -9,8 +9,8 @@ class Inscrire extends Component {
           <img src={TêteATête} alt="" className={style.BackImage} />
           <div className={style.inscrire}>
             <div className={style.contenu}>
-              <h1 className={style.titleInscrit}>Vous escrire</h1>
-              <form action="">
+              <h1 className={style.titleInscrit}>Vous inscrire</h1>
+              <form action="" id="form">
                 <table>
                   <td>
                     <tr>

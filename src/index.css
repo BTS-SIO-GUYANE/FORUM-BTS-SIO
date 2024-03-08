@@ -110,3 +110,25 @@ header .container {
 .bts-sio{
   font-size: 30px;
 }
+#msgBienvenue{
+  display: block;
+  text-align: left;
+  font-size: 30px;
+  /* width: 700px; */
+  margin-top: 20px;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+.card-article{
+  width: 150px;
+  height: 150px;
+  background-color: #fff;
+}
+.card-article-content h3{
+  color: black;
+  text-align: center;
+  margin-top: 40px;
+}
+.article-conteiner{
+  gap: 1000px;
+}
