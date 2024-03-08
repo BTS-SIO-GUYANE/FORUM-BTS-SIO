@@ -1,19 +1,22 @@
+*{
+  font-family: Arial;
+}
 body {
   margin: 0;
-  /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;*/
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', */
+    /* 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', */
+    /* sans-serif; */
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
  background-color: #004166; 
 
   /*font-family: cambria;*/
 }
-
+/* 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
 
 header {
   width: 100%;
@@ -33,13 +36,13 @@ header .container {
   display: flex;
   justify-content: space-around;
   gap: 4rem;
-  font-size: 20px;
+  font-size: 18px;
   padding: 10px;
   
 }
 #menu li{
   list-style: none;
-
+font-weight: 500;
 }
 #menu a{
 
@@ -68,8 +71,11 @@ header .container {
 margin-left: 10px;
 }
 
-h1{
+h2{
   margin-left: 5px;
+  color: #fff;
+  font-size: 70px;
+  text-align: center;
 }
 
  .forum{ display: flex;
@@ -81,8 +87,61 @@ h1{
    text-decoration: none;
    color: #fff;
  }
-.ordi2{
-  
- 
+
+.annonce {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
 
 }
+
+.card {
+  width: 250px;
+  height: 250px;
+ background-color: #fff;
+  overflow: hidden;
+}
+ 
+
+.card-content {
+  padding: 10px;
+
+}
+
+.card-content h3 {
+  margin: 0;
+  text-align: center;
+  justify-content: center;
+}
+
+.card-content p {
+  margin: 0;
+}
+
+.card-content a {
+  display: block;
+  margin-top: 10px;
+}
+
+.cardConteiner {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  
+}
+
+button {
+  width: 150px;
+  height: 50px;
+  border-radius: 7px;
+}
+
+.aideEtSupport {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+ 

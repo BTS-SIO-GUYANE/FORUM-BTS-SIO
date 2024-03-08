@@ -1,13 +1,20 @@
 import Header from "../components/Header";
+import article from "../image/article.jpg";
 
 function AideEtSupport(){
     return(
-        <header>
+
+        <>
+        
                <Header/>
-               <h1>Aide et Sup</h1>
-            
-        </header>
-    );  
+        
+        <section className="aideEtSupport" style={{ backgroundImage:`url(${article})` }}>
+        <h2>Aide Et Support</h2>
+
+        </section>
+        
+        </>
+    ); 
 }
 
 export default AideEtSupport;
