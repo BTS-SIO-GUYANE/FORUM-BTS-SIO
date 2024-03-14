@@ -27,10 +27,10 @@ model Article {
   titre    String
   date     DateTime
   contenu  String
-  membre   Membre    @relation(fields: [idMembre], references: [id])
-  idMembre Int
-  rubriques Rubrique @relation(fields: [idRubriques],references: [id])
-  idRubriques Int
+  membre   Membre?    @relation(fields: [idMembre], references: [id])
+  idMembre Int?
+  rubriques Rubrique? @relation(fields: [idRubriques],references: [id])
+  idRubriques Int?
   reponses Reponse[]
 }
 

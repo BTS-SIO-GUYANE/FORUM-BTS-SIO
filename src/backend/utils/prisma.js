@@ -37,5 +37,3 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 export default prisma;
-
-export { Role, FormStatus };

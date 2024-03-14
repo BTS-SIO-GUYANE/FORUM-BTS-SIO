@@ -1,28 +1,22 @@
-const express = require('express');
+import express from 'express';
+import { createArticles, deleteArticles, getArticles } from '../controllers/articlesController.js';
 const app = express();
 
 // Define a route for handling GET requests to the root URL
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
-});
 
-app.get('api/articles', (req, res) => {
-    res.send('Articles');
-  });
+app.get('/',getArticles);
 
-app.post('api/articles', (req, res) => {
-    // Handle the POST request here
-    res.send('Received POST request');
-  });
+app.post('/', createArticles);
+  
+app.delete('/',deleteArticles);
 
-app.get('api/articles/:id', (req, res) => {
+app.update('/',updateArticles);
+
+app.get('/:id', (req, res) => {
     const articleId = req.params.id;
     res.send(`Article ID: ${articleId}`);
   });
 
 
-// Start the server
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-})
+
+export default app
