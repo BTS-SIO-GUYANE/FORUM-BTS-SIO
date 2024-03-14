@@ -1,0 +1,60 @@
+.page{
+    background-color:#000;
+    color:#ffff;
+}
+.title{
+    margin-left: 2em;
+}
+.paragraphe{
+    margin-left: 4em;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.colonne1, .colonne2{
+    box-sizing: border-box;
+    padding: 20px;
+    flex: 1;
+}
+.image{
+  float: right;
+}
+@media screen and (min-width: 700px) {
+    /*Deux colonnes lorsque la largeur de l'écran est supérieure à 600 pixels*/
+    .colonne1,
+    .colonne2 {
+      flex: 0 0 45%; /*Définissez la largeur de chaque colonne  */
+       margin: 1%; 
+    }
+    .container{
+      flex-direction: row;
+    }
+    
+  }
+.formulaire{
+    border: #ffff;
+    border-width: 6px;
+    border-style: solid;
+    margin: 20px;
+    background-color: #004166;
+    min-height: 35em;
+    width: 30em;
+}
+.space{
+  width: 23em;
+  margin: 20px;
+  border: #000;
+  border-width: 2px;
+  border-style: solid;
+  padding: 6px;
+}
+textarea {
+    vertical-align: top;
+  }
+
+.lesContenus{
+    position: relative;
+    padding: 20px;
+}
