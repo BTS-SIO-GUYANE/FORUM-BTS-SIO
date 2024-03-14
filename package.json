@@ -42,5 +42,13 @@
   "main": "index.js",
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BTS-SIO-GUYANE/FORUM-BTS-SIO.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BTS-SIO-GUYANE/FORUM-BTS-SIO/issues"
+  },
+  "homepage": "https://github.com/BTS-SIO-GUYANE/FORUM-BTS-SIO#readme",
   "description": ""
 }
