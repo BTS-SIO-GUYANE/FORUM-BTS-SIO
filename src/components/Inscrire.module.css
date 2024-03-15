@@ -25,6 +25,7 @@
 .titleInscrit{
     font-size: 50px;
     text-align: center;
+    color: #000;
 }
 .inscrire, .Input{
     display: flex;

@@ -1,3 +1,6 @@
+*{
+  font-family: Arial;
+}
 body {
   margin: 0;
 
@@ -5,11 +8,10 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;*/
-  background-color: #004166;
-  height: 100vh;
-
-  /*font-family: cambria;*/
+  -moz-osx-font-smoothing: grayscale;
+    font-family: cambria;*/
+  background-color: #004166; 
+  color:#fff;
 }
 #root {
   display: flex;
@@ -19,12 +21,12 @@ body {
 main{
  flex-grow: 1;
 }
-
+/* 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+/* header */
 header {
   width: 100%;
   color: #fff;
@@ -38,16 +40,17 @@ header .container {
   max-width: 1800px;
   margin: 0 auto;
 }
-
+/* barre de navigation */
 #menu {
   display: flex;
   justify-content: space-around;
   gap: 4rem;
-  font-size: 20px;
+  font-size: 18px;
   padding: 10px;
 }
 #menu li {
   list-style: none;
+font-weight: 500;
 }
 #menu a {
   text-decoration: none;
@@ -74,18 +77,126 @@ header .container {
   margin-left: 10px;
 }
 
-h1 {
+#titre-logo{
   margin-left: 5px;
 }
 
-.forum {
-  display: flex;
-  gap: 2rem;
+h2{
+  margin-left: 5px;
+  color: #fff;
+  font-size: 70px;
+  text-align: center;
+}
+
+.forum{ display: flex;
+   gap: 2rem;
+
 }
 
 .forum a {
-  text-decoration: none;
-  color: #fff;
+   text-decoration: none;
+   color: #fff;
+ }
+
+ .annonce {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+
 }
-.ordi2 {
+
+.card {
+  width: 250px;
+  height: 250px;
+ background-color: #fff;
+  overflow: hidden;
+}
+ 
+
+.card-content {
+  padding: 10px;
+
+}
+
+.card-content h3 {
+  margin: 0;
+  text-align: center;
+  justify-content: center;
+}
+
+.card-content p {
+  margin: 0;
+}
+
+.card-content a {
+  display: block;
+  margin-top: 10px;
+}
+
+.cardConteiner {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  
+}
+
+button {
+  width: 150px;
+  height: 50px;
+  border-radius: 7px;
+}
+
+#div1{
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+}
+#div1 button{
+  color: gray;
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  border: solid black 3px;
+  border-radius: 5px;
+}
+#dim{
+  /* float: right;
+  margin-right: 50px; */
+  border: solid black 8px;
+  
+}
+.bts-sio{
+  font-size: 30px;
+}
+#msgBienvenue{
+  display: block;
+  text-align: left;
+  font-size: 30px;
+  /* width: 700px; */
+  margin-top: 20px;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+.card-article{
+  width: 150px;
+  height: 150px;
+  background-color: #fff;
+}
+.card-article-content h3{
+  color: black;
+  text-align: center;
+  margin-top: 40px;
+}
+.article-conteiner{
+  gap: 1000px;
+  justify-content: center;
+}
+
+.aideEtSupport{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
