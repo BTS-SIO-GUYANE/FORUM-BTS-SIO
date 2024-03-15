@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import TêteATête from "../image/TêteATête.jpg";
+import Support from "../image/support.jpg";
 import style from "./Inscrire.module.css";
 
 class Inscrire extends Component {
   render() {
     return (
       <section className={style.inscrireContainer}>
-          <img src={TêteATête} alt="" className={style.BackImage} />
+          <img src={Support} alt="" className={style.BackImage} />
           <div className={style.inscrire}>
             <div className={style.contenu}>
               <h1 className={style.titleInscrit}>Vous inscrire</h1>
