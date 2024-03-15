@@ -6,12 +6,12 @@ function AideEtSupport(){
     return(
        
         <Layout> 
-            <section className="aideEtSupport" style={{backgroungImage: `url(${Support})`}}></section>
+            <section className="aideEtSupport" style={{backgroungImage: `url(${Support})`}}>
                 <h1>Aide et Sup</h1>
                 <div>
                     <Article/>
                 </div>
-            
+            </section>
         </Layout>
  
         
