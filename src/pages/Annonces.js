@@ -1,11 +1,15 @@
-import Header from './components/Header';
-
-function ann () {
+import Layout from '../components/Layout';
+// import imgcode from '../image/imgcode.jpg';
+function Annonces() {
     return(
-        
-        <Header/>
-        )
+        <Layout> 
+          
+          <h1>Annonces</h1>
+          
+        </Layout>
+       
+        );
    
 }
 
-export default ann
+export default Annonces
