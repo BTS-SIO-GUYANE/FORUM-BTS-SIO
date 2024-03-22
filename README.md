@@ -1,4 +1,3 @@
-
 # What is it ?
 
 Here you can find the source code of our forum.
@@ -13,7 +12,6 @@ NodeJS, Express, React and Prisma
 
 You can clone it using:  
 `git clone https://github.com/BTS-SIO-GUYANE/FORUM-BTS-SIO.git`
-
 
 # Getting Started with Create React App
 
