@@ -19,13 +19,12 @@
     res.json({ status: 'ok' });
 }
 
- const updateCategories = (req, res) => {
+const createCategories = (req, res) => {
     console.log('test', req.query)
     res.json({ status: 'ok' });
 }
 
-export { getCategories };
-export { putCategories };
-export { deleteCategories };
-export { updateCategories };
+
+export { getCategories, putCategories, deleteCategories, createCategories};
+
 

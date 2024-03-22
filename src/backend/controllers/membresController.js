@@ -19,12 +19,10 @@ const deleteMembres = (req, res) => {
     res.json({ status: 'ok' });
 }
 
-const updateMembres = (req, res) => {
+const createMembres = (req, res) => {
     console.log('test', req.query)
     res.json({ status: 'ok' });
 }
 
-export { getMembres };
-export { putMembres };
-export { deleteMembres };
-export { updateMembres };
+
+export { getMembres, deleteMembres, deleteMembres, createMembres };
