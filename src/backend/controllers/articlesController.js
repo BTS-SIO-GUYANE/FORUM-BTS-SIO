@@ -16,34 +16,23 @@ import prisma from '../utils/prisma.js';
     );
   
     console.log('articles:',articles)
-    // console.log('test', req.query)
-    res.json({ status: 'ok', titre: articles.titre });
+    res.json({ status: 'ok',articles });
 }
 
   
  const deleteArticles = async (req, res) => {
     const articles = await prisma.article.delete({
         where: {
-            id: req.params.id
+            id: parseInt(req.query.id)
         }
     });
+    console.log('articles:',articles)
+    res.json({ status: 'ok', titre: articles.titre });
 }
 
- const updateArticles = async (req, res) => {
-    const articles = await prisma.article.update({
-        where: {
-            id: req.params.id
-        },
-        data: {
-            titre: req.body.titre,
-            contenu: req.body.content
-        }
-    })
-    res.json({ status: 'ok' });
-}
+
 
 const createArticles = async (req, res) => {
-    //console.log('test', req.query)
     const article = await prisma.article.create({
         data: {
           titre: req.body.titre,
@@ -55,7 +44,29 @@ const createArticles = async (req, res) => {
     res.json({ status: 'ok' });
 }
 
+const putArticles = async (req, res) => {
+    const article = await prisma.article.update({
+        where: {
+            id: parseInt(req.query.id)
+        },
+        data: {
+          titre: req.body.titre,
+          date: new Date(),
+          contenu: req.body.content
+        }
+    })
+    console.log('article:',article)
+    res.json({ status: 'ok' , article});
+}
+const getArticle = async (req, res) => {
+    const article = await prisma.article.findUnique({
+        where: {
+            id: parseInt(req.query.id)
+        }
+    })
+    res.json({ status: 'ok' });
+}
 
 
-export { getArticles, deleteArticles, updateArticles, createArticles, putArticles };
+export { getArticles, deleteArticles, createArticles, putArticles, getArticle };
 

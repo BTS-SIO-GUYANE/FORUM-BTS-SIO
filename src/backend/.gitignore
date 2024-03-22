@@ -2,5 +2,5 @@ node_modules
 .env
 *.log
 .idea
-
+.DS_Store
 prisma/ERD.*
