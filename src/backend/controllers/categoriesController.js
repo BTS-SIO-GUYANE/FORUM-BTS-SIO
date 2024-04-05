@@ -4,12 +4,13 @@
  * @access  Public
  */
 
- const getCategories = (req, res) => {
+ const getCategories = async (req, res) => {
+    const categories = await prisma.category.findMany();
     console.log('test', req.query)
     res.json({ status: 'ok' });
 }
 
- const putCategories = (req, res) => {
+ const putCategories = async (req, res) => {
     console.log('test', req.query)
     res.json({ status: 'ok' });
 }
@@ -19,13 +20,12 @@
     res.json({ status: 'ok' });
 }
 
- const updateCategories = (req, res) => {
+const createCategories = (req, res) => {
     console.log('test', req.query)
     res.json({ status: 'ok' });
 }
 
-export { getCategories };
-export { putCategories };
-export { deleteCategories };
-export { updateCategories };
+
+export { getCategories, putCategories, deleteCategories, createCategories};
+
 

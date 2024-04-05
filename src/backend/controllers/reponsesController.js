@@ -19,12 +19,9 @@
     res.json({ status: 'ok' });
 }
 
- const updateReponses = (req, res) => {
+ const createReponses = (req, res) => {
     console.log('test', req.query)
     res.json({ status: 'ok' });
 }
 
-export { getReponses };
-export { putReponses };
-export { deleteReponses};
-export { updateReponses};
+export { getReponses, putReponses, deleteReponses, createReponses };
