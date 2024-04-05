@@ -1,7 +1,7 @@
 import Navbar from "./Navbar";
 import logo from '../image/mg.png';
 
-console.log(logo);
+// console.log(logo);
 function Header(){
     return(
         <header>
