@@ -1,26 +1,18 @@
-const express = require('express');
+import express from 'express';
+import { createCategories, deleteCategories, getCategorie, putCategories, getCategories, putCategories } from '../controllers/categoriesController.js';
+import { getCategories } from '../controllers/categoriesController.js';
 const app = express();
 
 // Define a route for handling GET requests to the root URL
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
-});
+app.get ('/', getCategorie);
 
-// Define a route for handling POST requests to the '/submit' URL
-app.post('/submit', (req, res) => {
-  // Handle the POST request here
-  res.send('Received POST request');
-});
+app.post('/', putCategories);
 
-// Define a route with URL parameters
-app.get('/users/:id', (req, res) => {
-  const userId = req.params.id;
-  res.send(`User ID: ${userId}`);
-});
+app.delete('/', deleteCategories); 
 
-// Define a route with multiple URL parameters
-app.get('/users/:id/posts/:postId', (req, res) => {
-  const userId = req.params.id;
-  const postId = req.params.postId;
-  res.send(`User ID: ${userId}, Post ID: ${postId}`);
-});
+app.get('/:id', getCategories);
+
+app.put('/:id', putCategories);
+
+
+export default app
