@@ -19,12 +19,9 @@
     res.json({ status: 'ok' });
 }
 
- const updateRubriques = (req, res) => {
+ const createRubriques = (req, res) => {
     console.log('test', req.query)
     res.json({ status: 'ok' });
 }
 
-export { getRubriques };
-export { putRubriques };
-export { deleteRubriques };
-export { updateRubriques };
+export { getRubriques, putRubriques, deleteRubriques, createRubriques };
