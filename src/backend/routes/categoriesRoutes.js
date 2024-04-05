@@ -24,3 +24,4 @@ app.get('/users/:id/posts/:postId', (req, res) => {
   const postId = req.params.postId;
   res.send(`User ID: ${userId}, Post ID: ${postId}`);
 });
+

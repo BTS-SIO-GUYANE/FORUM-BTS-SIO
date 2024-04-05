@@ -40,9 +40,5 @@ const getArticles = (req, res) => {
 //     return res.status(200).json({ status: 'ok' });
 // }
 
-export { getStatus };
-export { getMembres };
-export { getCategories };
-export { getRubriques };
-export { getReponses };
-export { getArticles };
+export { getStatus, getMembres, getCategories, getRubriques, getReponses, getArticles };
+
